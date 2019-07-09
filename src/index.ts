@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import indexRouter from './routes/IndexRouter';
 import contactoRouter from './routes/ContactoRouter';
+import actividadRouter from './routes/ActividadRouter';
 class Server {
 
     app: Application;
@@ -29,6 +30,7 @@ class Server {
     setRouters(): void {
 
         this.app.use('/', indexRouter);
+        this.app.use('/api/usuarios/actividad', actividadRouter);
         this.app.use('/api/usuarios', contactoRouter);
 
     }
