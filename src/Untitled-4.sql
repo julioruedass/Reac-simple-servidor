@@ -1,0 +1,1 @@
+SELECT * FROM `CgfRXNmJjr`.`comentarios` LIMIT 1000;

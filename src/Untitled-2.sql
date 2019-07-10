@@ -1,0 +1,1 @@
+SELECT * FROM `CgfRXNmJjr`.`usuarios` LIMIT 1000;

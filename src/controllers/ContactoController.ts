@@ -41,9 +41,9 @@ class ContactoController {
     public async create(req: Request, resp: Response): Promise<void> {
         try {
 
-            await cnn.query('INSERT INTO contacto set ?', [req.body]);
+            await cnn.query('INSERT INTO usuario set ?', [req.body]);
 
-            resp.json({ message: 'Contacto almacenado' });
+            resp.json({ message: 'Usuario Almacenado' });
 
         } catch (error) {
             console.error(error);
@@ -56,9 +56,9 @@ class ContactoController {
         try {
 
             const { id } = req.params;
-            await cnn.query('UPDATE contacto SET ? WHERE id = ?', [req.body, id]);
+            await cnn.query('UPDATE usuario SET ? WHERE id = ?', [req.body, id]);
 
-            resp.json({ message: 'Contacto actualizado' });
+            resp.json({ message: 'Usuario actualizado' });
 
         } catch (error) {
             console.log(error);
@@ -72,7 +72,7 @@ class ContactoController {
             const { id } = req.params;
             await cnn.query('DELETE FROM contacto WHERE id = ?', [id]);
 
-            resp.json({ message: 'Contacto eliminado' });
+            resp.json({ message: 'Usuario Eliminado' });
 
         } catch (error) {
             console.log(error);
