@@ -10,6 +10,7 @@ const IndexRouter_1 = __importDefault(require("./routes/IndexRouter"));
 const ContactoRouter_1 = __importDefault(require("./routes/ContactoRouter"));
 const ActividadRouter_1 = __importDefault(require("./routes/ActividadRouter"));
 const ComentariosRouter_1 = __importDefault(require("./routes/ComentariosRouter"));
+const SeccionRouter_1 = __importDefault(require("./routes/SeccionRouter"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -27,11 +28,12 @@ class Server {
         this.app.use('/', IndexRouter_1.default);
         this.app.use('/api/usuarios/actividad', ActividadRouter_1.default);
         this.app.use('/api/usuarios', ContactoRouter_1.default);
+        this.app.use('/api/seccion', SeccionRouter_1.default);
         this.app.use('/api/comentarios', ComentariosRouter_1.default);
     }
     start() {
         this.app.listen(this.port, () => {
-            console.log('Server running at port:', this.port);
+            console.log('Servidor Trabaja En:', this.port);
         });
     }
 }

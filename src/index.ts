@@ -6,6 +6,7 @@ import indexRouter from './routes/IndexRouter';
 import contactoRouter from './routes/ContactoRouter';
 import actividadRouter from './routes/ActividadRouter';
 import comentariosRouter from './routes/ComentariosRouter';
+import seccionRouter from './routes/SeccionRouter';
 class Server {
 
     app: Application;
@@ -33,14 +34,16 @@ class Server {
         this.app.use('/', indexRouter);
         this.app.use('/api/usuarios/actividad', actividadRouter);
         this.app.use('/api/usuarios', contactoRouter);
+        this.app.use('/api/seccion', seccionRouter);
         this.app.use('/api/comentarios', comentariosRouter);
+  
 
     }
 
     start(): void {
 
         this.app.listen(this.port, () => {
-            console.log('Server running at port:', this.port);
+            console.log('Servidor Trabaja En:', this.port);
         });
 
     }
