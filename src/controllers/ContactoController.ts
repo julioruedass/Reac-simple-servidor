@@ -51,7 +51,6 @@ class ContactoController {
         }
     }
 
-
     public async update(req: Request, resp: Response): Promise<void> {
         try {
 
