@@ -30,7 +30,7 @@ class ContactoController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { id } = req.params;
-                const contact = yield ConexionDB_1.default.query('SELECT * FROM contacto WHERE id = ?', [id]);
+                const contact = yield ConexionDB_1.default.query('SELECT * FROM usuarios WHERE id = ?', [id]);
                 if (contact.length > 0) {
                     return resp.json(contact[0]);
                 }
@@ -45,7 +45,7 @@ class ContactoController {
     create(req, resp) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                yield ConexionDB_1.default.query('INSERT INTO contacto set ?', [req.body]);
+                yield ConexionDB_1.default.query('INSERT INTO usuarios set ?', [req.body]);
                 resp.json({ message: 'Contacto almacenado' });
             }
             catch (error) {
@@ -58,7 +58,7 @@ class ContactoController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { id } = req.params;
-                yield ConexionDB_1.default.query('UPDATE contacto SET ? WHERE id = ?', [req.body, id]);
+                yield ConexionDB_1.default.query('UPDATE usuarios SET ? WHERE id = ?', [req.body, id]);
                 resp.json({ message: 'Contacto actualizado' });
             }
             catch (error) {
@@ -71,7 +71,7 @@ class ContactoController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { id } = req.params;
-                yield ConexionDB_1.default.query('DELETE FROM contacto WHERE id = ?', [id]);
+                yield ConexionDB_1.default.query('DELETE FROM usuarios WHERE id = ?', [id]);
                 resp.json({ message: 'Contacto eliminado' });
             }
             catch (error) {
